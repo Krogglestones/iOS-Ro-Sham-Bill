@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="19A583" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Games" representedClassName="Games" syncable="YES" codeGenerationType="class">
+        <attribute name="endNumber" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="numberOfPlayers" attributeType="Integer 16" defaultValueString="2" usesScalarValueType="YES"/>
+        <attribute name="numberPicked" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="playedOn" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="startNumber" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="turns" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Turns" inverseName="game" inverseEntity="Turns"/>
+    </entity>
+    <entity name="Settings" representedClassName="Settings" syncable="YES" codeGenerationType="class">
+        <attribute name="endNumber" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="startNumber" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Turns" representedClassName="Turns" syncable="YES" codeGenerationType="class">
+        <attribute name="guessOn" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="playerGuess" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="playerName" attributeType="String"/>
+        <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Games" inverseName="turns" inverseEntity="Games"/>
+    </entity>
+    <elements>
+        <element name="Games" positionX="-362" positionY="-90" width="128" height="133"/>
+        <element name="Settings" positionX="-182" positionY="-90" width="128" height="73"/>
+        <element name="Turns" positionX="-54" positionY="27" width="128" height="103"/>
+    </elements>
+</model>
